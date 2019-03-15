@@ -1,0 +1,17 @@
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.GLEE.dll
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.GLEE.Drawing.dll
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.GLEE.GraphViewerGDI.dll
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.GLEE.pdb
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.GLEE.Drawing.pdb
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Microsoft.GLEE.GraphViewerGDI.pdb
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Dandi Agus Maulana\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
