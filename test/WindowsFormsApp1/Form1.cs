@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
         private bool found;
         private int[] visited;
         private int[,] langkahGraf; //langkahGraf[i,] menyimpan langkah quest ke-i jika terdapat jalur yg benar, jika tidak isinya 0
-                                    //Belum diterapkan untuk dalam visualisasi penampilan jalur
+                                    //Belum diterapkan dalam visualisasi penampilan jalur tiap quest yg berhasil
         public Form1()
         {
             InitializeComponent();
