@@ -48,6 +48,7 @@ namespace WindowsFormsApp1
             viewer.Graph = graph;
 
             //associate the viewer with the form
+            grafPanel.Controls.Clear();
             grafPanel.SuspendLayout();
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;
             grafPanel.Controls.Add(viewer);
