@@ -23,25 +23,23 @@ namespace WindowsFormsApp1
 
         private void InitializeGraph(String[] node)
         {
-            int total = int.Parse(node[0]);
+            //int total = int.Parse(node[0]);
             Microsoft.Glee.GraphViewerGdi.GViewer viewer = new Microsoft.Glee.GraphViewerGdi.GViewer();
 
             //create a graph object
             Microsoft.Glee.Drawing.Graph graph = new Microsoft.Glee.Drawing.Graph("graph");
 
             String[] s;
-            String simpul1, simpul2;
             Microsoft.Glee.Drawing.Node n;
-            for (int i = 1; i <= total; i++)
+            
+            for (int i = 1; i < node.Length; i++)
             {
                 s = node[i].Split(' ');
-                simpul1 = s[0];
-                simpul2 = s[1];
-                graph.AddEdge(simpul1, simpul2);
-                n = graph.FindNode(simpul1);
+                graph.AddEdge(s[0], s[1]);
+                n = graph.FindNode(s[0]);
                 n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.SeaGreen;
                 n.Attr.Shape = Microsoft.Glee.Drawing.Shape.DoubleCircle;
-                n = graph.FindNode(simpul2);
+                n = graph.FindNode(s[1]);
                 n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.SeaGreen;
                 n.Attr.Shape = Microsoft.Glee.Drawing.Shape.DoubleCircle;
             }
