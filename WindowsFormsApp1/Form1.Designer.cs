@@ -33,15 +33,15 @@
             this.grafDir = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.questText = new System.Windows.Forms.RichTextBox();
             this.fileDir = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.answerText = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,9 +54,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grafPanel.AutoSize = true;
             this.grafPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.grafPanel.Location = new System.Drawing.Point(12, 12);
+            this.grafPanel.Location = new System.Drawing.Point(12, 13);
             this.grafPanel.Name = "grafPanel";
-            this.grafPanel.Size = new System.Drawing.Size(404, 442);
+            this.grafPanel.Size = new System.Drawing.Size(404, 443);
             this.grafPanel.TabIndex = 0;
             // 
             // grafText
@@ -92,12 +92,22 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.grafDir);
             this.groupBox2.Controls.Add(this.grafText);
-            this.groupBox2.Location = new System.Drawing.Point(422, 12);
+            this.groupBox2.Location = new System.Drawing.Point(422, 13);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(290, 218);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "File Graf";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(126, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Browse";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // questText
             // 
@@ -144,7 +154,7 @@
             this.groupBox1.Controls.Add(this.fileDir);
             this.groupBox1.Controls.Add(this.questText);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(422, 236);
+            this.groupBox1.Location = new System.Drawing.Point(422, 238);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(290, 218);
             this.groupBox1.TabIndex = 2;
@@ -170,21 +180,11 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(126, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Browse";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 465);
+            this.ClientSize = new System.Drawing.Size(724, 481);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grafPanel);

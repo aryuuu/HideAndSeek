@@ -98,5 +98,10 @@ namespace WindowsFormsApp1
                 questText.Text = sr.ReadToEnd();
             }
         }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
