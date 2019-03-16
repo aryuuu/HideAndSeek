@@ -83,7 +83,7 @@ namespace WindowsFormsApp1
 
         public void DFS(int arah, int x, int y, int l) //1 9 1
         {
-            if (x == y && l>0) //apabila x == y di awal maka false/tidak (?)
+            if (x == y ) //apabila x == y di awal maka false/tidak (?)
             //Basis apabila nilai x == y (Ferdiant menemukan Jose)
             {
                 found = true;
