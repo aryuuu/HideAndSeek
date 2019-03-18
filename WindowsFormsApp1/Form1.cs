@@ -10,11 +10,12 @@ using System.IO;
 using System.Security;
 using System.Windows.Forms;
 using Microsoft.Glee.Drawing;
+using MaterialSkin.Controls;
 
 namespace WindowsFormsApp1
 {
 
-    public partial class Form1 : Form
+    public partial class Form1 : MaterialForm
     {
         public Form1()
         {
@@ -37,11 +38,11 @@ namespace WindowsFormsApp1
                 s = node[i].Split(' ');
                 graph.AddEdge(s[0], s[1]);
                 n = graph.FindNode(s[0]);
-                n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.SeaGreen;
-                n.Attr.Shape = Microsoft.Glee.Drawing.Shape.DoubleCircle;
+                n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.DarkSlateGray;
+                n.Attr.Shape = Microsoft.Glee.Drawing.Shape.Circle;
                 n = graph.FindNode(s[1]);
-                n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.SeaGreen;
-                n.Attr.Shape = Microsoft.Glee.Drawing.Shape.DoubleCircle;
+                n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.DarkSlateGray;
+                n.Attr.Shape = Microsoft.Glee.Drawing.Shape.Circle;
             }
             graph.GraphAttr.EdgeAttr.ArrowHeadAtTarget = ArrowStyle.None;
             //bind the graph to the viewer
@@ -100,6 +101,28 @@ namespace WindowsFormsApp1
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string[] lines = new string[90000];
+            for (int i = 1001; i <= 10000; i++)
+            {
+                int j = i + 1;
+                lines[i - 1001] = i + " " + j;
+
+            }
+            System.IO.File.WriteAllLines(@"C:\Users\acer\Desktop\WriteLines.txt", lines);
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

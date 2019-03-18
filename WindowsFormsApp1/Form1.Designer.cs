@@ -53,10 +53,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grafPanel.AutoSize = true;
+            this.grafPanel.BackColor = System.Drawing.Color.White;
             this.grafPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.grafPanel.Location = new System.Drawing.Point(12, 13);
+            this.grafPanel.Location = new System.Drawing.Point(12, 83);
             this.grafPanel.Name = "grafPanel";
-            this.grafPanel.Size = new System.Drawing.Size(404, 443);
+            this.grafPanel.Size = new System.Drawing.Size(404, 404);
             this.grafPanel.TabIndex = 0;
             // 
             // grafText
@@ -64,7 +65,7 @@
             this.grafText.Location = new System.Drawing.Point(8, 51);
             this.grafText.Name = "grafText";
             this.grafText.ReadOnly = true;
-            this.grafText.Size = new System.Drawing.Size(276, 161);
+            this.grafText.Size = new System.Drawing.Size(274, 135);
             this.grafText.TabIndex = 6;
             this.grafText.Text = "";
             // 
@@ -88,16 +89,19 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.grafDir);
             this.groupBox2.Controls.Add(this.grafText);
-            this.groupBox2.Location = new System.Drawing.Point(422, 13);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox2.Location = new System.Drawing.Point(422, 83);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(290, 218);
+            this.groupBox2.Size = new System.Drawing.Size(290, 192);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "File Graf";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button1
             // 
@@ -114,7 +118,7 @@
             this.questText.Location = new System.Drawing.Point(8, 51);
             this.questText.Name = "questText";
             this.questText.ReadOnly = true;
-            this.questText.Size = new System.Drawing.Size(117, 161);
+            this.questText.Size = new System.Drawing.Size(117, 149);
             this.questText.TabIndex = 6;
             this.questText.Text = "";
             // 
@@ -140,13 +144,14 @@
             this.answerText.Location = new System.Drawing.Point(167, 49);
             this.answerText.Name = "answerText";
             this.answerText.ReadOnly = true;
-            this.answerText.Size = new System.Drawing.Size(117, 161);
+            this.answerText.Size = new System.Drawing.Size(117, 151);
             this.answerText.TabIndex = 10;
             this.answerText.Text = "";
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.answerText);
             this.groupBox1.Controls.Add(this.button2);
@@ -154,21 +159,22 @@
             this.groupBox1.Controls.Add(this.fileDir);
             this.groupBox1.Controls.Add(this.questText);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(422, 238);
+            this.groupBox1.Location = new System.Drawing.Point(422, 281);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(290, 218);
+            this.groupBox1.Size = new System.Drawing.Size(290, 206);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "File Pertanyaan";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(127, 120);
+            this.button5.Location = new System.Drawing.Point(126, 113);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(38, 23);
             this.button5.TabIndex = 11;
             this.button5.Text = "=>";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -184,11 +190,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 481);
+            this.ClientSize = new System.Drawing.Size(724, 499);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grafPanel);
             this.Name = "Form1";
+            this.Text = "Hide and Seek";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);

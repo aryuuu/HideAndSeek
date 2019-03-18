@@ -10,11 +10,12 @@ using System.IO;
 using System.Security;
 using System.Windows.Forms;
 using Microsoft.Glee.Drawing;
+using MaterialSkin.Controls;
 
 namespace WindowsFormsApp1
 {
 
-    public partial class Form1 : Form
+    public partial class Form1 : MaterialForm
     {
         //Variabel global
 
@@ -58,7 +59,8 @@ namespace WindowsFormsApp1
             path = new int[Int32.Parse(quest[0]) + 1];
             langkahGraf = new int[Int32.Parse(quest[0]) + 1, TotalNode + 1];
             int l = 0;
-            AnswerQuest.Text = "Answer :" + Environment.NewLine;
+            AnswerQuest.Items.Add("Answer:");
+            //questText.Text = "Answer :" + Environment.NewLine;
             for (int i = 1; i < quest.Length; i++)
             {
                 found = false;
@@ -71,11 +73,13 @@ namespace WindowsFormsApp1
                     {
                         langkahGraf[i, j] = path[j];
                     }
-                    AnswerQuest.Text = AnswerQuest.Text + "YA" + Environment.NewLine;
+                    AnswerQuest.Items.Add(quest[i]+" YA");
+                    //questText.Text = questText.Text + "YA" + Environment.NewLine;
                 }
                 else
                 {
-                    AnswerQuest.Text = AnswerQuest.Text + "TIDAK" + Environment.NewLine;
+                    AnswerQuest.Items.Add(quest[i]+" TIDAK");
+                    //questText.Text = questText.Text + "TIDAK" + Environment.NewLine;
                 }
 
             }
@@ -140,17 +144,17 @@ namespace WindowsFormsApp1
                 for (int i = 1; i < node.Length; i++)
                 {
                     s = node[i].Split(' ');
-                    graph.AddEdge(s[0], s[1]);
+                    graph.AddEdge(s[0], s[1]);                    
                     //Memasukkan graf kedalam list ketetanggaannya
                     vertex[Int32.Parse(s[0])].Add(Int32.Parse(s[1]));
                     vertex[Int32.Parse(s[1])].Add(Int32.Parse(s[0]));
 
                     n = graph.FindNode(s[0]);
-                    n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.SeaGreen;
-                    n.Attr.Shape = Microsoft.Glee.Drawing.Shape.DoubleCircle;
+                    n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.DarkSlateGray;
+                    n.Attr.Shape = Microsoft.Glee.Drawing.Shape.Circle;
                     n = graph.FindNode(s[1]);
-                    n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.SeaGreen;
-                    n.Attr.Shape = Microsoft.Glee.Drawing.Shape.DoubleCircle;
+                    n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.DarkSlateGray;
+                    n.Attr.Shape = Microsoft.Glee.Drawing.Shape.Circle;
                 }
                 //Menghitung kedalaman tiap-tiap simpul dari graf dari simpul 1
                 int now = 1; int l = 0;
@@ -190,12 +194,18 @@ namespace WindowsFormsApp1
         private void button3_Click(object sender, EventArgs e)
         {
             try
-            {
-                var sr = new StreamReader(grafDir.Text);
-                grafText.Text = sr.ReadToEnd();
-                InitializeGraph(grafText.Lines);
-                button6.Visible = true;
-                sr.Close();
+            {                
+                if (checkBox1.Checked)
+                {
+                    InitializeGraph(grafText.Lines);
+                }
+                else {
+                    var sr = new StreamReader(grafDir.Text);
+                    grafText.Text = sr.ReadToEnd();
+                    InitializeGraph(grafText.Lines);
+                    sr.Close();
+                }                
+                button6.Visible = true;                
                 //button6.BringToFront();
                 
             }
@@ -223,12 +233,12 @@ namespace WindowsFormsApp1
             try
             {
                 var sr = new StreamReader(fileDir.Text);
-                string[] temp = sr.ReadToEnd().Split('\n');
-                questText.DataSource = temp;
-                button5.Enabled = true;
-                questText.Enabled = false;
-                //questText.Text = sr.ReadToEnd();
+                //string[] temp = sr.ReadToEnd().Split('\n');
+                //AnswerQuest.DataSource = temp;
+                questText.Text = sr.ReadToEnd();
                 //solve(questText.Lines);
+                button5.Enabled = true;
+                AnswerQuest.Enabled = false;                
             }
             catch (ArgumentException ex)
             {
@@ -244,12 +254,12 @@ namespace WindowsFormsApp1
         {
             try
             {
-                if (questText.Items.Count == 0)
+                if (questText.Text == "")
                 {
-                    throw new ArgumentNullException("File", "No answer found");
+                    throw new ArgumentNullException("Question", "No answer found");
                 }
-                solve(questText.Items.OfType<string>().ToArray());
-                questText.Enabled = true;
+                solve(questText.Lines);
+                AnswerQuest.Enabled = true;
             }
             catch (ArgumentNullException ex)
             {
@@ -258,36 +268,16 @@ namespace WindowsFormsApp1
             catch (NullReferenceException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-            } 
+            }  /*
             catch (IndexOutOfRangeException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-            } 
+            }  */
         }
 
         private void questText_DoubleClick(object sender, EventArgs e)
         {
-            if (questText.SelectedIndex == 0)
-            {
-                MessageBox.Show("Bukan pertanyaan!");
-            }
-            else
-            if (langkahGraf[questText.SelectedIndex, 0] == 0)
-            {
-                MessageBox.Show("Tidak ada solusi");
-            }
-            else
-            {
-                int i = 0;
-                while (langkahGraf[questText.SelectedIndex, i] != 0 && i <= langkahGraf.GetUpperBound(1))
-                {
-                    path[i] = langkahGraf[questText.SelectedIndex , i];
-                    i++;
-                }
-                path[i] = 0; //Terminate
-                length = 0;
-                timer1.Enabled = true;
-            }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -325,9 +315,9 @@ namespace WindowsFormsApp1
             {
                 s = grafText.Lines[i].Split(' ');
                 n = graph.FindNode(s[0]);
-                n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.SeaGreen;
+                n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.DarkSlateGray;
                 n = graph.FindNode(s[1]);
-                n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.SeaGreen;
+                n.Attr.Fillcolor = Microsoft.Glee.Drawing.Color.DarkSlateGray;
             }
             //bind the graph to the viewer
             viewer.Graph = graph;
@@ -339,6 +329,67 @@ namespace WindowsFormsApp1
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;
             grafPanel.Controls.Add(viewer);
             grafPanel.ResumeLayout(); 
+        }
+
+        private void AnswerQuest_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (AnswerQuest.SelectedIndex == 0)
+            {
+                MessageBox.Show("Bukan pertanyaan!");
+            }
+            else
+            if (langkahGraf[AnswerQuest.SelectedIndex, 0] == 0)
+            {
+                MessageBox.Show("Tidak ada solusi");
+            }
+            else
+            {
+                int i = 0;
+                while (langkahGraf[AnswerQuest.SelectedIndex, i] != 0 && i <= langkahGraf.GetUpperBound(1))
+                {
+                    path[i] = langkahGraf[AnswerQuest.SelectedIndex, i];
+                    i++;
+                }
+                path[i] = 0; //Terminate
+                length = 0;
+                timer1.Enabled = true;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                grafDir.Enabled = false;
+                button1.Enabled = false;
+                grafText.ReadOnly = false;
+            }
+            else
+            {
+                grafDir.Enabled = true;
+                button1.Enabled = true;
+                grafText.ReadOnly = true;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                fileDir.Enabled = false;
+                button4.Enabled = false;
+                button2.Enabled = false;
+                questText.ReadOnly = false;
+                button5.Enabled = true;
+            }
+            else
+            {
+                fileDir.Enabled = true;
+                button4.Enabled = true;
+                button2.Enabled = true;
+                questText.ReadOnly = true;
+
+            }
         }
     }
 }
