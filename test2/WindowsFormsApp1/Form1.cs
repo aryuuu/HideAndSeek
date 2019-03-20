@@ -209,7 +209,7 @@ namespace WindowsFormsApp1
                     sr.Close();
                 }
                 button6.Visible = true;
-                //button6.BringToFront();
+                button6.BringToFront();
 
             }
             catch (ArgumentException ex)
@@ -236,12 +236,10 @@ namespace WindowsFormsApp1
             try
             {
                 var sr = new StreamReader(fileDir.Text);
-                //string[] temp = sr.ReadToEnd().Split('\n');
-                //AnswerQuest.DataSource = temp;
                 questText.Text = sr.ReadToEnd();
-                //solve(questText.Lines);
                 button5.Enabled = true;
                 AnswerQuest.Enabled = false;
+                sr.Close();
             }
             catch (ArgumentException ex)
             {
@@ -272,11 +270,11 @@ namespace WindowsFormsApp1
             catch (NullReferenceException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-            }  /*
+            }  
             catch (IndexOutOfRangeException ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-            }  */
+            }  
         }
 
         private void questText_DoubleClick(object sender, EventArgs e)
