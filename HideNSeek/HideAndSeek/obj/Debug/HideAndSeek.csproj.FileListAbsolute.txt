@@ -1,0 +1,15 @@
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\bin\Debug\HideAndSeek.exe.config
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\bin\Debug\HideAndSeek.exe
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\bin\Debug\HideAndSeek.pdb
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\bin\Debug\MaterialSkin.dll
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\bin\Debug\Microsoft.GLEE.pdb
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\bin\Debug\Microsoft.GLEE.Drawing.pdb
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\bin\Debug\Microsoft.GLEE.GraphViewerGDI.pdb
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\obj\Debug\HideAndSeek.csprojAssemblyReference.cache
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\obj\Debug\HideAndSeek.Form1.resources
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\obj\Debug\HideAndSeek.Properties.Resources.resources
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\obj\Debug\HideAndSeek.csproj.GenerateResource.cache
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\obj\Debug\HideAndSeek.csproj.CoreCompileInputs.cache
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\obj\Debug\HideAndSeek.csproj.CopyComplete
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\obj\Debug\HideAndSeek.exe
+C:\Users\acer\source\repos\Project\HideAndSeek\HideNSeek\HideAndSeek\obj\Debug\HideAndSeek.pdb
